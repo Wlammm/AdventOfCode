@@ -1,7 +1,6 @@
-use std::fs;
 use std::fs::File;
-use std::io::BufReader;
 use std::io::BufRead;
+use std::io::BufReader;
 
 fn main() {
     let input = get_input();
@@ -41,8 +40,14 @@ fn get_loosing_char(input: char) -> char {
 }
 
 fn calculate_score_second_part(input: &str) -> i32 {
-    let my_input = input.chars().nth(2).expect("Failed to get my char from string");
-    let their_char = input.chars().nth(0).expect("Failed to get their char from string");
+    let my_input = input
+        .chars()
+        .nth(2)
+        .expect("Failed to get my char from string");
+    let their_char = input
+        .chars()
+        .nth(0)
+        .expect("Failed to get their char from string");
 
     // lose
     if my_input == 'X' {
@@ -61,8 +66,16 @@ fn calculate_score_second_part(input: &str) -> i32 {
 }
 
 fn calculate_score(input: &str) -> i32 {
-    let their_input = input.chars().nth(0).expect("Failed to get their char from string") as i32 - 'A' as i32;
-    let my_input = input.chars().nth(2).expect("Failed to get my char from string") as i32 - 'X' as i32;
+    let their_input = input
+        .chars()
+        .nth(0)
+        .expect("Failed to get their char from string") as i32
+        - 'A' as i32;
+    let my_input = input
+        .chars()
+        .nth(2)
+        .expect("Failed to get my char from string") as i32
+        - 'X' as i32;
 
     let shape_points = my_input + 1;
     if my_input == their_input {
