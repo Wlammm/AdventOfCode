@@ -46,18 +46,18 @@ fn calculate_score_second_part(input: &str) -> i32 {
 
     // lose
     if my_input == 'X' {
-        let shape_points = get_loosing_char(their_char) as i32 - 'X' as i32;
-        return shape_points + 1;
+        let shape_points = get_loosing_char(their_char) as i32 - 'X' as i32 + 1;
+        return shape_points;
     }
 
     // tie
     if my_input == 'Y' {
-        let shape_points = their_char as i32 - 'A' as i32;
-        return 3 + shape_points + 1;
+        let shape_points = their_char as i32 - 'A' as i32 + 1;
+        return 3 + shape_points;
     }
 
-    let shape_points = get_winning_char(their_char) as i32 - 'X' as i32;
-    shape_points + 1 + 6
+    let shape_points = get_winning_char(their_char) as i32 - 'X' as i32 + 1;
+    shape_points + 6
 }
 
 fn calculate_score(input: &str) -> i32 {
