@@ -40,7 +40,7 @@ fn contains_other_second_part(input: &str) -> bool {
     if first_start_num <= second_start_num && first_end_num >= second_start_num || first_start_num <= second_end_num && first_end_num >= second_end_num {
         return true;
     }
-    
+     
     if second_start_num <= first_start_num && second_end_num >= first_start_num || second_start_num <= first_end_num && second_end_num >= first_end_num {
         return true;
     }
